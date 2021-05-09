@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:create, :show]
+  before_action :authenticate_user!, except: [:create]
 
   def create
     @user = User.new(user_params)
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       user: @user,
     }, status: :ok
   end
-
+  
   def user_params
     params.require(:user).permit(:email, :username, :password, :password_confirmation)
   end
