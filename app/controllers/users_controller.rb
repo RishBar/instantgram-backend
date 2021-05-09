@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:create, :show]
 
   def create
     @user = User.new(user_params)
@@ -11,6 +12,13 @@ class UsersController < ApplicationController
     else
       render json: @user.errors.full_messages.to_sentence, status: 400
     end
+  end
+
+  def show
+    @user = User.find(params["id"])
+    render :json => {
+      user: @user,
+    }, status: :ok
   end
 
   def user_params
