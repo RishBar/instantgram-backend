@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Description
+This is a rails api backend for an image repository. The front end repository can be found [here](https://github.com/RishBar/instantgram-client)
 
-Things you may want to cover:
-
-* Ruby version
+* Setup
+1. install ruby version 2.7.1
+2. install rails version 6.0.3
+3. Run `bundle install` to install dependencies
+4. Run `rails s` to start the server
 
 * System dependencies
+-devise_token_auth
+-active_model_serializers
+-active_storage
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
