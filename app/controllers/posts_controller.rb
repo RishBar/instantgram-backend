@@ -1,5 +1,12 @@
 class PostsController < ApplicationController
+  include ActiveStorage::SetCurrent
   before_action :authenticate_user!
+
+  def index
+    @posts = Post.all
+    render json: @posts
+  end
+
 
   def create
     user = current_user
@@ -8,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-      params.permit(:caption, :images)
+      params.permit(:caption, :images => [])
   end
 
 end
